@@ -18,13 +18,13 @@ echo:
 echo:
 ECHO If you are not authorized to run this script, please exit immediately.
 echo:
-TIMEOUT /T 15 >nul 2>&1
+TIMEOUT /T 8 >nul 2>&1
 echo:
 REM End start page
 
 REM Start Variables
-SET uncpath=\\ADMIN-PC\SharedBuild
-SET build=1753.1
+SET uncpath=\\rbcc-pos\SharedBuild
+SET build=1840.2_usa
 COLOR 3
 TITLE Installing latest build. Please wait...
 REM End Variables
@@ -40,11 +40,6 @@ taskkill /f /im backserver_win.exe  >nul 2>&1
 ECHO Removing old shortcuts...
 del "%userprofile%\Desktop\Launcher - Shortcut.lnk" /S /Q >nul 2>&1
 del "%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\Launcher - Shortcut.lnk" /S /Q >nul 2>&1
-echo:
-
-ECHO Setting screen resolution...
-copy %uncpath%\QRes.exe %userprofile%\Downloads >nul 2>&1
-%userprofile%\Downloads\QRes.exe %screenresolution% >nul 2>&1
 echo:
 
 ECHO Downloading Unigames build %build%...
