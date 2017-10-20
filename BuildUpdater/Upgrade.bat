@@ -47,7 +47,7 @@ copy %uncpath%\mobcas.win_%build%.7z %userprofile%\Desktop >nul 2>&1
 echo:
 
 ECHO Extracting Unigames build %build% to desktop...
-%uncpath%\7za -y x %userprofile%\desktop\mobcas.win_%build%.7z -o%userprofile%\Desktop\mobcas.win_%build%\
+%uncpath%\BuildUpdater\Dependencies\7za -y x %userprofile%\desktop\mobcas.win_%build%.7z -o%userprofile%\Desktop\mobcas.win_%build%\
 echo:
 
 ECHO Removing compressed folder to free up space...
@@ -55,8 +55,8 @@ del %userprofile%\desktop\mobcas.win_%build%.7z /S /Q >nul 2>&1
 echo:
 
 ECHO Creating Desktop shortcut and Startup entry...
-%uncpath%\nircmd shortcut "%userprofile%\Desktop\mobcas.win_%build%\build\Launcher.exe" "~$folder.desktop$" "Launcher" >nul 2>&1
-%uncpath%\nircmd shortcut "%userprofile%\Desktop\mobcas.win_%build%\build\Launcher.exe" "%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\" "Launcher" >nul 2>&1
+%uncpath%\BuildUpdater\Dependencies\nircmd shortcut "%userprofile%\Desktop\mobcas.win_%build%\build\Launcher.exe" "~$folder.desktop$" "Launcher" >nul 2>&1
+%uncpath%\BuildUpdater\Dependencies\nircmd shortcut "%userprofile%\Desktop\mobcas.win_%build%\build\Launcher.exe" "%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\" "Launcher" >nul 2>&1
 echo:
 
 ECHO Done! Rebooting system...
